@@ -1,0 +1,11 @@
+framework module NetworkRouter {
+  umbrella header "NetworkRouter.h"
+
+  export *
+  module * { export * }
+}
+
+module NetworkRouter.Swift {
+    header "NetworkRouter-Swift.h"
+    requires objc
+}
