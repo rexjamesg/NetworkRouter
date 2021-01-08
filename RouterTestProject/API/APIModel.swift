@@ -71,7 +71,7 @@ extension IpDetail {
 
 
 struct RandomUser: Codable, Convertable {
-    let results:Results?
+    let results:[Results]?
     let info:Info?
 }
 
@@ -84,7 +84,7 @@ extension RandomUser {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        results = try? container.decodeIfPresent(Results.self, forKey: .results)
+        results = try? container.decodeIfPresent([Results].self, forKey: .results)
         info = try? container.decodeIfPresent(Info.self, forKey: .info)
     }
 }
