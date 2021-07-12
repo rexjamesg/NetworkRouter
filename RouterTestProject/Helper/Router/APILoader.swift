@@ -15,15 +15,14 @@ import UIKit
 // 4. 製作一個函式傳入遵循APIProtocal協議的列舉，並下達請求
 
 open class APILoader: NSObject {
-
-    public typealias APICompletion = (_ result:Any?, _ error: String?)->Void
+    
     public typealias RouterCompletion = (_ data:Data?, _ response: URLResponse?, _ error: String?)->Void
         
-    //路由器
+    //路由
     let networkRouter:NetworkRouter = NetworkRouter.shared
     
     /**
-     指派路由器下答請求並處理回應
+     指派路由下答請求並處理回應
      - Parameter api: 遵循APIProtocol協議的類
      */
     public class func sendRequest<T:APIProtocol>(api:T, completion: @escaping RouterCompletion) {

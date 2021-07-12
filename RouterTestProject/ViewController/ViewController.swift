@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
-    var titles:[String] = ["randomUser","getIpDetail"]
+    var titles:[String] = ["randomUser","getIpDetail"]        
     
     override func viewDidLoad() {
         super.viewDidLoad()

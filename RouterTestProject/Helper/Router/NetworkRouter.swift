@@ -42,34 +42,22 @@ final class NetworkRouter: NSObject {
         request.httpMethod = api.httpMethod.rawValue
                        
         switch api.task {
-            
-        case .requestBodyParameters(let parameters):
+        
+        case .requestBodyParameters(let parameters, let additionHeaders):
             let fullParameters = appendCommonParameters(api: api, parameters: parameters)
-            try configureParameters(bodyParameters: fullParameters, urlParameters: nil, formdataParameter: nil, request: &request)
-            
-        case .requestUrlParameters(let parameters):
-            let fullParameters = appendCommonParameters(api: api, parameters: parameters)
-            try configureParameters(bodyParameters: nil, urlParameters: fullParameters, formdataParameter: nil, request: &request)
-            
-        case .requestFormdataParameter(let parameters):
-            
-            let fullParameters = appendCommonParameters(api: api, parameters: parameters)
-            try configureParameters(bodyParameters: nil, urlParameters: nil, formdataParameter: fullParameters, request: &request)
-            
-        case .requestBodyParametersAndHeaders(let parameters, let additionHeaders):
             addAdditionalHeaders(additionHeaders, request: &request)
+            try configureParameters(bodyParameters: fullParameters, request: &request)
+                        
+        case .requestFormdataParameters(let parameters, let additionHeaders):
             let fullParameters = appendCommonParameters(api: api, parameters: parameters)
-            try configureParameters(bodyParameters: fullParameters, urlParameters: nil, formdataParameter: nil, request: &request)
-            
-        case .requestUrlParametersAndHeaders(let parameters, let additionHeaders):
             addAdditionalHeaders(additionHeaders, request: &request)
-            let fullParameters = appendCommonParameters(api: api, parameters: parameters)
-            try configureParameters(bodyParameters: nil, urlParameters: fullParameters, formdataParameter: nil, request: &request)
+            try configureParameters(formdataParameter: fullParameters, request: &request)
             
-        case .requestFormdataParametersAndHeaders(let parameters, let additionHeaders):
-            addAdditionalHeaders(additionHeaders, request: &request)
+        case .requestUrlParameters(let parameters, let additionHeaders):
             let fullParameters = appendCommonParameters(api: api, parameters: parameters)
-            try configureParameters(bodyParameters: nil, urlParameters: nil, formdataParameter: fullParameters, request: &request)
+            addAdditionalHeaders(additionHeaders, request: &request)
+            try configureParameters(urlParameters: fullParameters, request: &request)
+            
         }
         
         return request
@@ -99,7 +87,7 @@ final class NetworkRouter: NSObject {
      - Parameter bodyParameters: 塞在http body裡面的參數
      - Parameter urlParameters: 塞在網址後面的參數
      */
-    private func configureParameters(bodyParameters:Parameters?, urlParameters:Parameters?, formdataParameter:Parameters?, request: inout URLRequest) throws {
+    private func configureParameters(bodyParameters:Parameters?=nil, urlParameters:Parameters?=nil, formdataParameter:Parameters?=nil, request: inout URLRequest) throws {
         
         do {
             if let bodyParameters = bodyParameters {

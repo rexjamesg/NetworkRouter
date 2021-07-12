@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2332C4A2623F25100D6D83D /* RouterDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2332C492623F25100D6D83D /* RouterDefinition.swift */; };
+		D2332C5326242D6B00D6D83D /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2332C5226242D6B00D6D83D /* APIRepository.swift */; };
 		D245B48324ADCE000076D69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245B48224ADCE000076D69C /* AppDelegate.swift */; };
 		D245B48524ADCE000076D69C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245B48424ADCE000076D69C /* SceneDelegate.swift */; };
 		D245B48724ADCE000076D69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245B48624ADCE000076D69C /* ViewController.swift */; };
@@ -14,13 +16,12 @@
 		D245B48C24ADCE010076D69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D245B48B24ADCE010076D69C /* Assets.xcassets */; };
 		D245B48F24ADCE010076D69C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D245B48D24ADCE010076D69C /* LaunchScreen.storyboard */; };
 		D245B49A24ADCE010076D69C /* RouterTestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245B49924ADCE010076D69C /* RouterTestProjectUITests.swift */; };
-		D245B4AF24ADD45D0076D69C /* APIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245B4AE24ADD45D0076D69C /* APIDataModel.swift */; };
+		D245B4AF24ADD45D0076D69C /* APISourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245B4AE24ADD45D0076D69C /* APISourceModel.swift */; };
 		D245B4B624ADD7880076D69C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245B4B524ADD7880076D69C /* APIManager.swift */; };
 		D248CE8B25A83CD6008DB1BE /* APIResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248CE8A25A83CD6008DB1BE /* APIResultViewController.swift */; };
 		D248CE8E25A84577008DB1BE /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248CE8D25A84577008DB1BE /* APIModel.swift */; };
 		D265EDA625A71615004E81A4 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D265EDA525A71615004E81A4 /* NetworkRouter.swift */; };
 		D265EDA925A7164C004E81A4 /* APILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D265EDA825A7164B004E81A4 /* APILoader.swift */; };
-		D265EDAC25A7166C004E81A4 /* RouterDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D265EDAB25A7166C004E81A4 /* RouterDefinition.swift */; };
 		D2ACBBBF24BC374200042BD3 /* NetworkRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2ACBBBE24BC374100042BD3 /* NetworkRouter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D2E6EDA424B0802C008E77E6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6EDA324B0802C008E77E6 /* SwiftUIView.swift */; };
 		E45E82A65B530C9F02E7E87A /* Pods_RouterTestProject_RouterTestProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A35818A092F5112DBD4685 /* Pods_RouterTestProject_RouterTestProjectUITests.framework */; };
@@ -56,6 +57,8 @@
 		5D2137ECF017CBA90FCDC109 /* Pods-RouterTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouterTestProject.debug.xcconfig"; path = "Target Support Files/Pods-RouterTestProject/Pods-RouterTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 		83992614439295DA002E6430 /* Pods-RouterTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouterTestProject.release.xcconfig"; path = "Target Support Files/Pods-RouterTestProject/Pods-RouterTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		CB4C38288020103A6D953803 /* Pods-RouterTestProject-RouterTestProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouterTestProject-RouterTestProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-RouterTestProject-RouterTestProjectUITests/Pods-RouterTestProject-RouterTestProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2332C492623F25100D6D83D /* RouterDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterDefinition.swift; sourceTree = "<group>"; };
+		D2332C5226242D6B00D6D83D /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		D245B47F24ADCE000076D69C /* RouterTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouterTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D245B48224ADCE000076D69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D245B48424ADCE000076D69C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,13 +70,12 @@
 		D245B49524ADCE010076D69C /* RouterTestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouterTestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D245B49924ADCE010076D69C /* RouterTestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTestProjectUITests.swift; sourceTree = "<group>"; };
 		D245B49B24ADCE010076D69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D245B4AE24ADD45D0076D69C /* APIDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModel.swift; sourceTree = "<group>"; };
+		D245B4AE24ADD45D0076D69C /* APISourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISourceModel.swift; sourceTree = "<group>"; };
 		D245B4B524ADD7880076D69C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D248CE8A25A83CD6008DB1BE /* APIResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResultViewController.swift; sourceTree = "<group>"; };
 		D248CE8D25A84577008DB1BE /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		D265EDA525A71615004E81A4 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		D265EDA825A7164B004E81A4 /* APILoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILoader.swift; sourceTree = "<group>"; };
-		D265EDAB25A7166C004E81A4 /* RouterDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterDefinition.swift; sourceTree = "<group>"; };
 		D2ACBBBE24BC374100042BD3 /* NetworkRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkRouter.framework; sourceTree = "<group>"; };
 		D2E6EDA324B0802C008E77E6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		F49C525E1A9CF6EDFB123AAE /* Pods-RouterTestProject-RouterTestProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouterTestProject-RouterTestProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-RouterTestProject-RouterTestProjectUITests/Pods-RouterTestProject-RouterTestProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +113,34 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D2332C4C2623F93C00D6D83D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D248CE8D25A84577008DB1BE /* APIModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2332C4D2623F95100D6D83D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D2332C492623F25100D6D83D /* RouterDefinition.swift */,
+				D265EDA525A71615004E81A4 /* NetworkRouter.swift */,
+				D265EDA825A7164B004E81A4 /* APILoader.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D2332C4F2623F97800D6D83D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D2332C4D2623F95100D6D83D /* Router */,
+				D2332C4C2623F93C00D6D83D /* Model */,
+				D248CE9125A8557F008DB1BE /* API */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		D245B47624ADCE000076D69C = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +167,7 @@
 				D245B48224ADCE000076D69C /* AppDelegate.swift */,
 				D245B48424ADCE000076D69C /* SceneDelegate.swift */,
 				D248CE9425A855B3008DB1BE /* ViewController */,
-				D248CE9125A8557F008DB1BE /* API */,
+				D2332C4F2623F97800D6D83D /* Helper */,
 				D245B48824ADCE000076D69C /* Main.storyboard */,
 				D245B48B24ADCE010076D69C /* Assets.xcassets */,
 				D245B48D24ADCE010076D69C /* LaunchScreen.storyboard */,
@@ -169,12 +199,9 @@
 		D248CE9125A8557F008DB1BE /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D245B4AE24ADD45D0076D69C /* APIDataModel.swift */,
+				D245B4AE24ADD45D0076D69C /* APISourceModel.swift */,
 				D245B4B524ADD7880076D69C /* APIManager.swift */,
-				D265EDA825A7164B004E81A4 /* APILoader.swift */,
-				D265EDA525A71615004E81A4 /* NetworkRouter.swift */,
-				D265EDAB25A7166C004E81A4 /* RouterDefinition.swift */,
-				D248CE8D25A84577008DB1BE /* APIModel.swift */,
+				D2332C5226242D6B00D6D83D /* APIRepository.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -346,10 +373,11 @@
 				D248CE8E25A84577008DB1BE /* APIModel.swift in Sources */,
 				D248CE8B25A83CD6008DB1BE /* APIResultViewController.swift in Sources */,
 				D245B4B624ADD7880076D69C /* APIManager.swift in Sources */,
-				D245B4AF24ADD45D0076D69C /* APIDataModel.swift in Sources */,
+				D245B4AF24ADD45D0076D69C /* APISourceModel.swift in Sources */,
+				D2332C5326242D6B00D6D83D /* APIRepository.swift in Sources */,
 				D245B48524ADCE000076D69C /* SceneDelegate.swift in Sources */,
-				D265EDAC25A7166C004E81A4 /* RouterDefinition.swift in Sources */,
 				D265EDA625A71615004E81A4 /* NetworkRouter.swift in Sources */,
+				D2332C4A2623F25100D6D83D /* RouterDefinition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

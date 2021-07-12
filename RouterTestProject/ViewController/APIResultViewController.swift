@@ -23,22 +23,14 @@ class APIResultViewController: UIViewController {
             switch type {
             case 0:
                 //RandomUser 短時間拿太多次會沒資料
-                APIManager.sendAPI(api: .randomUser(gender: "male")) { (result, error) in
-                    if let result = result as? RandomUser {
-                        if let text = result.convertToDict()?.description {
-                            self.setText(text: text)
-                        }
-                    }
-                }
+                APIRepository.getRandomUser(gender: "male") { (result) in
+                    self.setText(text: result)
+                }                
                 break
                 
             case 1:
-                APIManager.sendAPI(api: .getIpDetail(ip: "1.1.1.1"))  { (result, error) in
-                    if let result = result as? IpDetail {
-                        if let text = result.convertToDict()?.description {
-                            self.setText(text: text)
-                        }
-                    }
+                APIRepository.getIpDetail(ip: "1.1.1.1") { (result) in
+                    self.setText(text: result)
                 }
                 break
                 

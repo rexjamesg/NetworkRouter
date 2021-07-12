@@ -9,7 +9,10 @@
 import UIKit
 
 class APIManager: APILoader {
-    class func sendAPI(api:APIDataModel, completion:(APICompletion)?=nil) {        
+    
+    public typealias APICompletion = (_ result:Any?, _ error: String?)->Void
+    
+    class func sendAPI(api:APISourceModel, completion:(APICompletion)?=nil) {
         sendRequest(api: api) { (responseData, response, error) in
             if let completion = completion {
                                                 
@@ -34,7 +37,7 @@ class APIManager: APILoader {
      - Parameter responseData: 傳回來的資料
      - Returns: （資料, 錯誤資訊)
      */
-    private class func checkResult(api:APIDataModel, responseData:Data) -> Any? {
+    private class func checkResult(api:APISourceModel, responseData:Data) -> Any? {
         do {
             switch api {
             case .getIpDetail:

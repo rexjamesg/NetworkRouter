@@ -9,12 +9,13 @@
 import UIKit
 
 ///API名稱列舉，方便呼叫，可擴充
-enum APIDataModel:APIProtocol {
+enum APISourceModel:APIProtocol {
     case randomUser(gender:String?=nil)
     case getIpDetail(ip:String)
 }
 
-extension APIDataModel {
+extension APISourceModel {
+    
     ///API的網域
     var domain: String {
         switch self {
@@ -62,14 +63,20 @@ extension APIDataModel {
     var task: HTTPTask {
         switch self {
         case .randomUser(let gender):
-            return .requestUrlParameters(parameters: ["gender":gender ?? ""])
+            return .requestUrlParameters(parameters: ["gender":gender ?? ""], additionHeaders: headers)
         case .getIpDetail(let ip):
-            return .requestUrlParameters(parameters: ["ip":ip])
+            return .requestUrlParameters(parameters: ["ip":ip], additionHeaders: headers)            
         }
+    }
+    
+    var headers: HTTPHeaders? {
+        return nil
     }
     
     ///若有每支API都需傳送的值可寫在這裡，例如APIKey
     var commonParameter: [String : Any]? {
+        //return ["key":"1a2b3c4d5e"]
         return nil
     }
+
 }

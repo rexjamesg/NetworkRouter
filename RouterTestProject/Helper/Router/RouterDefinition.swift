@@ -15,6 +15,7 @@ public protocol APIProtocol {
     var path:String { get }
     var httpMethod:HTTPMethod { get }
     var task:HTTPTask { get }
+    var headers:HTTPHeaders? {get}
     var commonParameter:[String:Any]? { get }
 }
 
@@ -71,38 +72,31 @@ public enum NetworkResponse:String {
 /**
 Service
 ````
-參數加入至httpBody
 case requestBodyParameters(parameters:Parameters?)
- 
-參數加入至網址後方
 case requestUrlParameters(parameters:Parameters?)
- 
-參數由formdata方式傳送(可傳送圖片)
 case requestFormdataParameter(parameters:Parameters?)
- 
-參數及header加入至httpBody
 case requestBodyParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders)
- 
-參數加入至網址後方以及加入header
 case requestUrlParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders)
- 
-參數formdata方式傳送(可傳送圖片)以及加入header
 case requestFormdataParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders)
 ````
 */
 public enum HTTPTask {
+    
     ///參數加入至httpBody
-    case requestBodyParameters(parameters:Parameters?)
+    case requestBodyParameters(parameters:Parameters?, additionHeaders:HTTPHeaders?)
     ///參數加入至網址後方
-    case requestUrlParameters(parameters:Parameters?)
+    case requestUrlParameters(parameters:Parameters?, additionHeaders:HTTPHeaders?)
     ///參數由formdata方式傳送(可傳送圖片)
-    case requestFormdataParameter(parameters:Parameters?)
+    case requestFormdataParameters(parameters:Parameters?, additionHeaders:HTTPHeaders?)
+    
+    /*
     ///參數及header加入至httpBody
-    case requestBodyParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders)
+    case requestBodyParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders?)
     ///參數加入至網址後方以及加入header
-    case requestUrlParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders)
+    case requestUrlParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders?)
     ///參數formdata方式傳送(可傳送圖片)以及加入header
-    case requestFormdataParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders)
+    case requestFormdataParametersAndHeaders(parameters:Parameters?, additionHeaders:HTTPHeaders?)
+    */
 }
 
 ///HTTP方法(目前只列出常用的兩種，可擴充)
